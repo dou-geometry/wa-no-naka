@@ -1,15 +1,15 @@
 OutputDir = ./out
 PdfDir = ./docs
 GHC = ghc -dynamic -outputdir $(OutputDir) -no-keep-hi-files
-PTEX = ptex2pdf -u -l -ot "-synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape" -output-directory $(PdfDir)
+TEX = ptex2pdf -u -l -ot "-synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape" -output-directory $(PdfDir)
 
 all: programs cleanTex
 programs: mobius waveAnalysis
 
 mobius: prepDir
 	$(GHC)  ./Mobius.lhs
-	$(PTEX) ./Mobius.lhs
-	$(PTEX) ./Mobius.lhs
+	$(TEX) ./Mobius.lhs
+	$(TEX) ./Mobius.lhs
 
 waveAnalysis: prepDir
 
